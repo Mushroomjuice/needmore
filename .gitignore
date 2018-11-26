@@ -1,0 +1,6 @@
+.idea/
+.DS_store
+migrations
+logs/log*
+*py[cod]
+.qiniu*

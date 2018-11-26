@@ -1,5 +1,5 @@
 # 自定义公共文件
-# import functools
+import functools
 from flask import session, current_app, g
 
 from info.models import User
@@ -10,7 +10,7 @@ def func_index_convert(value):  # value = 1, 自定义的过滤器，用来转�
     return index_dict.get(value, "")
 
 def user_login_data(f):
-    @function.wraps(f)
+    @functools.wraps(f)
     def wrapper(*args,**kwargs):
         # 判断用户是否登录  取出session中的user_id
         user_id = session.get("user_id")

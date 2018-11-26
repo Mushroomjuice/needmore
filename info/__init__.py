@@ -1,5 +1,5 @@
 from logging.handlers import RotatingFileHandler
-from info.utils.common import func_index_convert
+
 from flask import Flask
 from flask_migrate import Migrate
 from flask_session import Session
@@ -48,6 +48,7 @@ def create_app(config_type,):
     # 管理表模型文件
     import info.models
     # 在utils中定义的函数想要变成过滤器，需要在app中注册，并且转换成过滤器
+    from info.utils.common import func_index_convert
     app.add_template_filter(func_index_convert,"index_convert")
 
     return app
